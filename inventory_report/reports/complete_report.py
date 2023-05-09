@@ -14,12 +14,12 @@ class CompleteReport(SimpleReport):
         sorted_company_products = products.most_common(None)
 
         report_lines = [
-            f"Data de fabricação mais antiga: {min_date}",
-            f"Data de validade mais próxima: {max_date}",
-            f"Empresa com mais produtos: {max_products}",
-            "Produtos estocados por empresa:",
+            f"Data de fabricação mais antiga: {min_date}\n",
+            f"Data de validade mais próxima: {max_date}\n",
+            f"Empresa com mais produtos: {max_products}\n",
+            "Produtos estocados por empresa:\n",
         ]
         for empresa, num_products in sorted_company_products:
-            report_lines.append(f"- {empresa}: {num_products}")
+            report_lines.append(f"- {empresa}: {num_products}\n")
 
-        return "\n".join(report_lines)
+        return "".join(report_lines)
